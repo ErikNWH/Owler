@@ -1,0 +1,40 @@
+
+.bodyDiv {
+    width: 100%;
+    height: auto;
+    margin-top: 1.5% !important;
+}
+
+div.bodyContainter {
+    margin-top: 15px !important;
+    width: 85%;
+    display: inline-block;
+    text-align: center;
+}
+
+.tab {
+    background-color: inherit !important;
+}
+
+.tab a {
+    color: grey;
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+.tab .active {
+    background: inherit !important;
+    color: black;
+}
+
+h3.title {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.auth-content {
+    height: 37em !important;
+    
+}
