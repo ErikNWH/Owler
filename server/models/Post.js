@@ -14,7 +14,7 @@ const postSchema = mongoose.Schema({
         {
             userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
             username: { type: String, default: '' },
-            comment: { tpye: String, default: '' },
+            comment: { type: String, default: '' },
             createdAt: { type: Date, default: Date.now() }
         }
     ],

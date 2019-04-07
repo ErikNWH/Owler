@@ -10,6 +10,7 @@ const dbConfig = require("../config/secret")
 /**
  * @description Database Schema en requirements
  */
+
 module.exports = {
     async CreateUser(req, res) {
         const Schema = Joi.object().keys({
@@ -24,7 +25,9 @@ module.exports = {
                 .min(8)
                 .required()
         });
-
+/**
+ * @description Checks if user credentials are valid When signing up
+ */
         const {
             error,
             value
@@ -85,6 +88,10 @@ module.exports = {
         });
     },
 
+/**
+ * @description Checks if user credentials are valid When loging in.
+ */
+
     async LoginUser(req, res) {
         if(!req.body.username || !req.body.password) {
             return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({message: 'No empty fields allowed'})
@@ -100,7 +107,7 @@ module.exports = {
                     return res.status(httpStatus.NOT_FOUND).json({message: 'Password incorrect'})
                 }
                 const token = jwt.sign({data: user}, dbConfig.secret, {
-                    expiresIn: '1h'
+                    expiresIn: '5h'
                 })
                 res.cookie('auth', token);
                 return res.status(httpStatus.OK).json({ message: 'Login succesful', user, token })
