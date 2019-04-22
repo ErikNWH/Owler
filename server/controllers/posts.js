@@ -122,7 +122,7 @@ module.exports = {
     await Post.findOne({ _id: req.params.id })
       .populate("user")
       .populate("comments.userId")
-      .then(post => {
+      .then((post) => {
         res.status(httpStatus.OK).json({ message: "Post found ", post });
       })
       .catch(err =>

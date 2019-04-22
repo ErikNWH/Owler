@@ -1,3 +1,4 @@
+
 .button {
     background: none !important;
     border: none !important;
@@ -51,6 +52,7 @@
   
   .collection {
     border: none !important;
+    /* background-color: #fff; */
   }
   
   .collection-item {

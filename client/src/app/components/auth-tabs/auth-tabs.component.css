@@ -1,11 +1,10 @@
-
 .bodyDiv {
     width: 100%;
     height: auto;
     margin-top: 1.5% !important;
 }
 
-div.bodyContainter {
+.bodyContainter {
     margin-top: 15px !important;
     width: 85%;
     display: inline-block;
@@ -36,5 +35,4 @@ h3.title {
 
 .auth-content {
     height: 37em !important;
-    
 }

@@ -1,11 +1,37 @@
+.collection-item {
+    background: #99AAB5;
+    color: #fff;
+    
+}
+
 a {
-    color: black
+    color: #fff
 }
 
 .active a {
-    color: #fff !important;
+    color: #99AAB5 !important;
 }
 
 .active {
     background-color: grey !important;
+}
+
+.material-icons {
+    color: grey;
+}
+
+.active .material-icons {
+    color: #fff;
+}
+
+.row span {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.num {
+    margin: 0 !important;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
 }
