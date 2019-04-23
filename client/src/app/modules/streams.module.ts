@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommentsComponent } from '../components/comments/comments.component';
 import { RouterModule } from '@angular/router';
 import { PeopleComponent } from '../components/people/people.component';
+import { UsersService } from '../services/users.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PeopleComponent } from '../components/people/people.component';
   ],
   providers: [
     TokenService,
-    PostService
+    PostService,
+    UsersService
   ]
 })
 export class StreamsModule { }

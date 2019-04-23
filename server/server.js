@@ -54,9 +54,11 @@ require('./socket/stream')(io);
  */
 const auth = require('./routes/authRoutes')
 const posts = require('./routes/postRoutes')
+const users = require('./routes/userRoutes')
 
 app.use('/api/chatapp', auth)
 app.use('/api/chatapp', posts)
+app.use('./api/chatapp', users)
 /**
  * @params { link } localhost:PORT
  * @description logs server link
