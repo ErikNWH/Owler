@@ -9,7 +9,7 @@
       
         <!-- Add Comment -->
         <div class="col s12 m8 l9">
-          <div class="col s12 m10">
+          <div class="col s12 m10 l9">
             <div class="row">
               <div class="card">
                 <ul class="collection">
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m8 l9">
+            <div class="col s12 m10 l9">
                 <div class="card postDiv">
                     <div class="card-content">
                         <form [formGroup]="commentForm" (ngSubmit)="AddComment()">
@@ -37,7 +37,7 @@
             </div>
       </div>
 
-        <ul class="collection col s12 m10" *ngFor="let comment of commentsArray">
+        <ul class="collection col s12 m10 l9" *ngFor="let comment of commentsArray">
           <li class="collection-item avatar">
             <img class="circle" src="http://placehold.it/50x50">
             <span class="title"> {{comment.username}} </span>

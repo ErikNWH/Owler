@@ -6,6 +6,12 @@ body {
 .btn {
     background-color: #7289DA;
 }
+.btn:hover {
+    background-color: #7289DA;
+}
+.btn:active {
+    background-color: #7289DA;
+}
 
 .tabs .indicator {
     background-color: #23272A;

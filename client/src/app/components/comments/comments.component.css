@@ -1,6 +1,10 @@
 .postDiv {
     background-color: #2C2F33;
   }
+
+  ul {
+    background-color: #fff;
+  }
   
   form {
     background-color: #fff;
@@ -9,6 +13,10 @@
   .formDiv {
     margin: 0px 20px 0px 20px;
   }
+
+  /* .btn {
+    background-color: #7289DA;
+  } */
   
   .addImageBtn {
     margin-bottom: 5px;
@@ -20,7 +28,7 @@
   
   .title {
     font-weight: bold;
-    color: #64b5f6;
+    color: #7289DA;
   }
   
   .time {
@@ -32,7 +40,3 @@
     font-size: 15px;
   }
 
-.btn {
-    background-color: #7289DA;
-}
-  
