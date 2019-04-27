@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import * as moment from 'moment';
 import io from "socket.io-client";
-import _ from "lodash";
+import * as _ from "lodash";
 import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
   socket: any;
-  posts = []
+  posts = [];
   user: any;
 
   constructor(private postService: PostService, private tokenService: TokenService, private router: Router) {

@@ -55,10 +55,16 @@ require('./socket/stream')(io);
 const auth = require('./routes/authRoutes')
 const posts = require('./routes/postRoutes')
 const users = require('./routes/userRoutes')
+const friends = require('./routes/friendsRoutes')
 
+/**
+ * middle ware
+ */
 app.use('/api/chatapp', auth)
 app.use('/api/chatapp', posts)
 app.use('/api/chatapp', users)
+app.use('/api/chatapp', friends)
+
 /**
  * @params { link } localhost:PORT
  * @description logs server link
