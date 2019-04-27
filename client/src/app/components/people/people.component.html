@@ -13,7 +13,7 @@
               <div class="card">
                 <a>
                   <div class="card-image imgDiv">
-                    <img class="imgCircle responsive-img" src="http://placehold.it/100x100" alt="img">
+                    <img class="imgCircle responsive-img" src="http://via.placeholder.com/150" alt="img">
                   </div>
                 </a>
                 <div class="card-action">
@@ -21,7 +21,8 @@
                     {{user.username}}
                   </h3>
                  <p>Country</p>
-                 <button class="btn" (click)="FollowUser(user)">Follow</button>
+                 <button class="btn" *ngIf="!CheckInArray(userArr, user._id)" (click)="FollowUser(user)">Follow</button>
+                 <button class="btn disabled following" *ngIf="CheckInArray(userArr, user._id)">Following</button>
                  <a class="secondary-content">
                    <i class="material-icons">chat</i>
                  </a>
