@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from "./../../services/users.service";
+import { UsersService } from "../../services/users.service";
 import * as _ from 'lodash';
 import { TokenService } from 'src/app/services/token.service';
 import io from 'socket.io-client'
