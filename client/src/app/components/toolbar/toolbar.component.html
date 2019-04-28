@@ -1,21 +1,20 @@
-
-  <nav class="nav-extend">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a (click)="GoToHome()" class="brand-logo">Chat app</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a (click)="logout()">logout</a></li>
-        </ul>
-      </div>
-      <div class="nav-content">
-        <div class="nav-div">
-          <img src="http://via.placeholder.com/150" alt="img" class="circle responsive-img">
-        </div>
-        <h1 class="profile-name">{{user.username}}</h1>
-        <p class="user-text"></p>
-      </div>
+<nav class="nav-extend">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a (click)="GoToHome()" class="brand-logo">Chat app</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a (click)="logout()">logout</a></li>
+      </ul>
     </div>
-  </nav>
-        
+
+    <div class="nav-content">
+      <div class="nav-div">
+        <img src="http://via.placeholder.com/150" alt="img" class="circle responsive-img" />
+      </div>
+      <h1 class="profile-name">{{ user.username }}</h1>
+      <p class="user-text"></p>
+    </div>
+  </div>
+</nav>

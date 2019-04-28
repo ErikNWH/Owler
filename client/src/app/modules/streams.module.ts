@@ -16,6 +16,8 @@ import { UsersService } from '../services/users.service';
 import { FollowingComponent } from '../components/following/following.component';
 import { FollowersComponent } from '../components/followers/followers.component';
 import { NotificationsComponent } from '../components/notifications/notifications.component';
+import { ChatComponent } from '../components/chat/chat.component';
+import { MessageComponent } from '../components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { NotificationsComponent } from '../components/notifications/notification
     PeopleComponent,
     FollowingComponent,
     FollowersComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    ChatComponent,
+    MessageComponent
   ],
   imports: [
     CommonModule,
