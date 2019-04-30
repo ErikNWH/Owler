@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 import * as M from "materialize-css";
 import { ActivatedRoute } from "@angular/router";
 import * as moment from "moment";
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: "app-view-user",
@@ -21,7 +22,7 @@ export class ViewUserComponent implements OnInit, AfterViewInit {
 
   constructor(
     private route: ActivatedRoute,
-    private usersService: UserService
+    private usersService: UsersService
   ) {}
 
   ngOnInit() {
