@@ -56,6 +56,7 @@ const auth = require('./routes/authRoutes')
 const posts = require('./routes/postRoutes')
 const users = require('./routes/userRoutes')
 const friends = require('./routes/friendsRoutes')
+const message = require('./routes/messageRoutes')
 
 /**
  * middle ware
@@ -64,6 +65,7 @@ app.use('/api/chatapp', auth)
 app.use('/api/chatapp', posts)
 app.use('/api/chatapp', users)
 app.use('/api/chatapp', friends)
+app.use('/api/chatapp', message)
 
 /**
  * @params { link } localhost:PORT

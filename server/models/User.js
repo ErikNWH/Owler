@@ -22,6 +22,12 @@ const userSchema = mongoose.Schema({
     ],
     followers: [
         {follower: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }}
+    ],
+    chatList: [
+        {
+            userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+            msgId: { type: mongoose.Schema.Types.ObjectId, ref: 'Message' }
+        }
     ]
 
 })

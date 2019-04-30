@@ -18,6 +18,7 @@ import { FollowersComponent } from '../components/followers/followers.component'
 import { NotificationsComponent } from '../components/notifications/notifications.component';
 import { ChatComponent } from '../components/chat/chat.component';
 import { MessageComponent } from '../components/message/message.component';
+import { MessageService } from '../services/message.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MessageComponent } from '../components/message/message.component';
   providers: [
     TokenService,
     PostService,
-    UsersService
+    UsersService,
+    MessageService
   ]
 })
 export class StreamsModule { }
