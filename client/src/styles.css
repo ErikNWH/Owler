@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #23272A;
+}
+
+.btn {
+    background-color: #7289DA;
+}
+.btn:hover {
+    background-color: #7289DA;
+}
+.btn:active {
+    background-color: #7289DA;
+}
+
+.tabs .indicator {
+    background-color: #23272A;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}

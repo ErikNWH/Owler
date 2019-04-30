@@ -1,0 +1,46 @@
+<!-- Register component -->
+<div class="container">
+  <div class="row">
+    <div class="col s10 offset-s1" id="panel" >
+        <div class="progress" *ngIf="showSpinner">
+            <div class="indeterminate"></div>
+        </div>
+      <h3 id="title">Register</h3>
+      <div id="errorMsg" *ngIf="errorMessage">
+        <span>{{ errorMessage }}</span>
+      </div>
+      <form class="col s12"[formGroup]="registerForm" novalidate (ngSubmit)="registerUser()">
+          <div class="row">
+            <div class="input-field col s12" >
+              <input placeholder="Username" id="user-name" type="text" formControlName="username">
+              <label for="username">Username</label>
+              <span class="error" *ngIf="!registerForm.controls['username'].valid && registerForm.controls['username'].touched">
+                  Username is required
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" formControlName="email">
+              <label for="email">Email</label>
+              <span class="error" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">
+                email is required
+            </span>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="pass-word" type="password" formControlName="password">
+                <label for="pass-word">Password</label>
+                <span class="error" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">
+                  password is required
+              </span>
+              </div>
+            </div>
+          <button class="btn waves-effect" id="registerbtn" [disabled]="!registerForm.valid">
+            Register
+          </button>
+        </form>
+    </div>
+  </div>
+</div>
