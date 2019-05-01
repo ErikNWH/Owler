@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { PostService } from 'src/app/services/post.service';
 import * as moment from 'moment';
-import io from "socket.io-client";
+import * as io from 'socket.io-client';
 import * as _ from "lodash";
 import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';

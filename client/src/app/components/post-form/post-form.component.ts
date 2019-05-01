@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
-import io from "socket.io-client";
+import * as io from "socket.io-client";
 
 @Component({
   selector: 'app-post-form',

@@ -1,27 +1,24 @@
-import { Component, OnInit } from "@angular/core";
-import { UsersService } from "../../services/users.service";
-import * as _ from "lodash";
-import { TokenService } from "src/app/services/token.service";
-import io from "socket.io-client";
+import { TokenService } from './../../services/token.service';
+import { UsersService } from './../../services/users.service';
+import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
+import * as io from 'socket.io-client';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-people",
-  templateUrl: "./people.component.html",
-  styleUrls: ["./people.component.css"]
+  selector: 'app-people',
+  templateUrl: './people.component.html',
+  styleUrls: ['./people.component.css']
 })
 export class PeopleComponent implements OnInit {
   socket: any;
   users = [];
-  userArr = [];
   loggedInUser: any;
+  userArr = [];
+  onlineusers = [];
 
-  constructor(
-    private userService: UsersService,
-    private tokenService: TokenService,
-    private router: Router
-  ) {
-    this.socket = io("http://localhost:3000");
+  constructor(private usersService: UsersService, private tokenService: TokenService, private router: Router) {
+    this.socket = io('http://localhost:3000');
   }
 
   ngOnInit() {
@@ -29,49 +26,59 @@ export class PeopleComponent implements OnInit {
     this.GetUsers();
     this.GetUser();
 
-    this.socket.on("refreshPage", () => {
+    this.socket.on('refreshPage', () => {
       this.GetUsers();
       this.GetUser();
     });
   }
 
   GetUsers() {
-    this.userService.GetAllUsers().subscribe(data => {
-      //console.log(data)
+    this.usersService.GetAllUsers().subscribe(data => {
       _.remove(data.result, { username: this.loggedInUser.username });
       this.users = data.result;
     });
   }
 
   GetUser() {
-    this.userService.GetUserById(this.loggedInUser._id).subscribe(data => {
-      // console.log(data)
+    this.usersService.GetUserById(this.loggedInUser._id).subscribe(data => {
       this.userArr = data.result.following;
     });
   }
 
   FollowUser(user) {
-    this.userService.FollowUser(user._id).subscribe(data => {
-      this.socket.emit("refresh", {});
-      //console.log(data)
+    this.usersService.FollowUser(user._id).subscribe(data => {
+      this.socket.emit('refresh', {});
     });
   }
 
   ViewUser(user) {
     this.router.navigate([user.username]);
-    if (this.loggedInUser.username !== user.username)
-    console.log(user.username)
-      this.userService.ProfileNotifcations(user._id).subscribe(
+    if (this.loggedInUser.username !== user.username) {
+      this.usersService.ProfileNotifcations(user._id).subscribe(
         data => {
-          this.socket.emit("refresh", {});
+          this.socket.emit('refresh', {});
         },
         err => console.log(err)
       );
+    }
   }
 
   CheckInArray(arr, id) {
-    const result = _.find(arr, ["userFollowed._id", id]);
+    const result = _.find(arr, ['userFollowed._id', id]);
     if (result) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  online(event) {
+    this.onlineusers = event;
+  }
+
+  CheckIfOnline(name) {
+    const result = _.indexOf(this.onlineusers, name);
+    if (result > -1) {
       return true;
     } else {
       return false;
