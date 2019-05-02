@@ -3,7 +3,8 @@
   <div class="col s12 m4">
     <a *ngIf="userData" [routerLink]="['', userData.username]">
       <span>Posts</span>
-      <p class="num">10</p>
+      <p class="num" *ngIf="userData.posts.length > 0"> {{ userData.posts.length }} </p>
+      <p class="num" *ngIf="userData.posts.length <= 0">0</p>
     </a>
   </div>
   <div class="col s12 m4">

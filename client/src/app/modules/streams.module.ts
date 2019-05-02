@@ -17,6 +17,9 @@ import { FollowingComponent } from '../components/following/following.component'
 import { FollowersComponent } from '../components/followers/followers.component';
 import { NotificationsComponent } from '../components/notifications/notifications.component';
 import { ViewUserComponent } from '../components/view-user/view-user.component';
+import { ChatComponent } from '../components/chat/chat.component';
+import { MessageComponent } from '../components/message/message.component';
+import { MessageService } from '../services/message.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ViewUserComponent } from '../components/view-user/view-user.component';
     FollowingComponent,
     FollowersComponent,
     NotificationsComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    MessageComponent,
+    ChatComponent
+
   ],
   imports: [
     CommonModule,
@@ -46,7 +52,8 @@ import { ViewUserComponent } from '../components/view-user/view-user.component';
   providers: [
     TokenService,
     PostService,
-    UsersService
+    UsersService,
+    MessageService
   ]
 })
 export class StreamsModule { }
