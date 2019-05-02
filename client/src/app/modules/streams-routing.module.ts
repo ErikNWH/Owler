@@ -37,11 +37,11 @@ const routes: Routes = [
     component: FollowersComponent,
     canActivate: [AuthGuard]
   },
-  {
-    path: ':name',
-    component: ViewUserComponent,
-    canActivate: [AuthGuard]
-  },
+  // {
+  //   path: ':name',
+  //   component: ViewUserComponent,
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: 'notifications',
     component: NotificationsComponent,

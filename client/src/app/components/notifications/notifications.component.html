@@ -1,3 +1,34 @@
-<p>
-  notifications are coming soon!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4 l3">
+      <app-side></app-side>
+    </div>
+
+    <div class="col s12 m8 l9">
+      <ul class="collection col s12 m10" *ngIf="notifications.length > 0">
+        <li class="collection avatar" *ngFor="let data of notifications">
+          <img class="circle" src="http://via.placeholder.com/50" alt="alt" />
+          <span class="title"> {{ data.message }} </span>
+          <a class="secondary-content">
+            <i *ngIf="!data.read" class="material-icons">brightness_1</i>
+            <i *ngIf="data.read" class="material-icons">panorama_fish_eye</i>
+          </a>
+          <p class="time">{{ TimeFromNow(data.created) }}</p>
+          <div>
+            <li class="material-icons" (click)="MarkNotification(data)" [ngClass]="data.read ? 'disabled': 'notDisabled'">
+              check
+            </li>
+            <li class="material-icons" (click)="DeleteNotification(data)">
+              delete_forever
+            </li>
+          </div>
+        </li>
+      </ul>
+      <div class="row" *ngIf="notifications.length <= 0">
+        <h3 class="test">
+          You have no notifications
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

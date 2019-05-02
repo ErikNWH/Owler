@@ -35,6 +35,18 @@ export class UsersService {
     })
   }
 
+  MarkNotification(id, deleteVal?): Observable<any> {
+    return this.http.post(`${BASEURL}/mark/${id}`, {
+      id, deleteVal
+    })
+  }
+
+  MarkAllAsRead(): Observable<any> {
+    return this.http.post(`${BASEURL}/mark-all`, {
+      all: true
+    })
+  }
+
   ProfileNotifcations(id): Observable<any> {
     return this.http.post(`${BASEURL}/user/view-profile`, { id });
   }

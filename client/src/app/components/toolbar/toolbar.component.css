@@ -9,7 +9,7 @@ nav {
   }
   
   .navDiv {
-    background-color: #64b5f6;
+    background-color: #7289DA;
   }
   
   .nav-content {
@@ -77,21 +77,21 @@ nav {
   }
   
   .title {
-    color: #64b5f6;
+    color: #7289DA;
     margin: 0px !important;
     padding: 0px !important;
     font-weight: normal;
   }
   
   .isRead {
-    color: #64b5f6;
+    color: #7289DA;
     margin: 0px !important;
     padding: 0px !important;
     font-weight: normal;
   }
   
-  .unread {
-    color: #64b5f6;
+  .unRead {
+    color: #7289DA;
     margin: 0px !important;
     padding: 0px !important;
     font-weight: bold;
@@ -107,7 +107,7 @@ nav {
   }
   
   .material-icons {
-    color: #64b5f6 !important;
+    color: #7289DA !important;
     cursor: pointer;
   }
   
@@ -117,7 +117,7 @@ nav {
   
   .markAll {
     color: #ffffff;
-    background: #64b5f6 !important;
+    background: #7289DA !important;
   }
   
   li.dropdown-button {
